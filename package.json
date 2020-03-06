@@ -1,0 +1,25 @@
+{
+  "name": "typescript-node",
+  "private": true,
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/app.ts",
+    "dev:watch": "ts-node-dev --respawn src/app.ts",
+    "start": "yarn build && node ./dist/app",
+    "clean": "rimraf dist/*",
+    "build": "yarn build:ts",
+    "build:ts": "yarn clean && tsc",
+    "watch": "yarn watch:ts",
+    "watch:ts": "yarn clean && tsc -w"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
+}
